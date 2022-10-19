@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color: lightgreen;
+    font-family: quantum;
+    margin: 1em 0;
+}
+
+h2 {
+    text-align: center;
+    color: lightsalmon;
+    font-family: quantum;
+    margin: 1em 0;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 350px;
+    height: 350px;
+    border: .5px solid black;
+}
+
+.parent>* {
+    border: .5px solid black;
+}
+
+.case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightseagreen;
+    font-size: 6em;
+    font-family: quantum;
+}
