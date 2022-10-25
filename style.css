@@ -23,7 +23,11 @@ button {
     display: flex;
     justify-content: center;
 }
-
+.bottom__button {
+    margin: 0 2em;
+    width: 10%;
+    border-radius: 25px;
+}
 li {
     list-style: none;
     padding: 1em 2em;

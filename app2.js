@@ -1,6 +1,11 @@
 // nombre de tour
 let turn = 0
 
+// scoring
+let score = 0
+let scoreP1 = document.querySelector("#p1")
+let scoreP2 = document.querySelector("#p2")
+
 // les joueurs
 const playerOne = "X"
 const playerTwo = "O"
@@ -57,74 +62,111 @@ function checkWin() {
     if (gameCase[0].innerHTML !== "" && gameCase[0].innerHTML === gameCase[1].innerHTML && gameCase[1].innerHTML === gameCase[2].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[3].innerHTML !== "" && gameCase[3].innerHTML === gameCase[4].innerHTML && gameCase[4].innerHTML === gameCase[5].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[6].innerHTML !== "" && gameCase[6].innerHTML === gameCase[7].innerHTML && gameCase[7].innerHTML === gameCase[8].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[0].innerHTML !== "" && gameCase[0].innerHTML === gameCase[4].innerHTML && gameCase[4].innerHTML === gameCase[8].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[2].innerHTML !== "" && gameCase[2].innerHTML === gameCase[4].innerHTML && gameCase[4].innerHTML === gameCase[6].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[0].innerHTML !== "" && gameCase[0].innerHTML === gameCase[3].innerHTML && gameCase[3].innerHTML === gameCase[6].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[1].innerHTML !== "" && gameCase[1].innerHTML === gameCase[4].innerHTML && gameCase[4].innerHTML === gameCase[7].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
     }
     if (gameCase[2].innerHTML !== "" && gameCase[2].innerHTML === gameCase[5].innerHTML && gameCase[5].innerHTML === gameCase[8].innerHTML) {
         if (turn % 2 === 0) {
             statut.innerHTML = 'Le joueur ' + playerTwo + ' à gagné '
+            scoreP2.innerHTML = score + 1
+            score = score + 1
             jeu = false
         } else {
             statut.innerHTML = 'Le joueur ' + playerOne + ' à gagné '
+            scoreP1.innerHTML = score + 1
+            score = score + 1
             jeu = false
         }
+    }
+    if (gameCase[0].innerHTML !== "" && gameCase[1].innerHTML !== "" && gameCase[2].innerHTML !== "" && gameCase[3].innerHTML !== "" && gameCase[4].innerHTML !== "" && gameCase[5].innerHTML !== "" && gameCase[6].innerHTML !== "" && gameCase[7].innerHTML !== "" && gameCase[8].innerHTML !== "" && jeu === true) {
+        jeu = false
+        statut.innerHTML = "DRAW"
+        setTimeout(rematch, 1000)
     }
 }
 // bouton de clear de la partie 
@@ -132,6 +174,16 @@ document.querySelector('#rematch').addEventListener('click', rematch)
 function rematch() {
     gameCase.forEach(cell => cell.innerHTML = "")
     turn = 0
+    jeu = true
+    statut.innerHTML = ""
+}
+document.querySelector('#clearall').addEventListener('click', clearall)
+function clearall() {
+    gameCase.forEach(cell => cell.innerHTML = "")
+    turn = 0
+    score = 0
+    scoreP1.innerHTML = score - score
+    scoreP2.innerHTML = score - score
     jeu = true
     statut.innerHTML = ""
 }
