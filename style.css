@@ -7,12 +7,12 @@ body, div {
 }
 h1 {
     text-align: center;
-    color: lightgreen;
+    color: aquamarine;
     font-family: quantum;
-    margin: 1em 0;
 }
 
 h2 {
+    height: 25px;
     text-align: center;
     color: lightsalmon;
     font-family: quantum;
@@ -24,6 +24,23 @@ button {
     justify-content: center;
 }
 
+li {
+    list-style: none;
+    padding: 1em 2em;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+button {
+    background-color: aquamarine;
+    padding: 1em;
+    width: 5em;
+    border: 1px solid black;
+    border-radius: 10%;
+}
 .flex {
     display: flex;
 }
@@ -31,6 +48,7 @@ button {
 .center {
     justify-content: center;
 }
+
 
 .parent {
     display: grid;
@@ -53,5 +71,12 @@ button {
     align-items: center;
     color: lightseagreen;
     font-size: 6em;
-    font-family: quantum;
+    font-family: Quantum;
+}
+.score {
+    height: 40px;
+    width: 5%;
+}
+.space {
+    padding: 0 1em;
 }
